@@ -1,0 +1,28 @@
+﻿<ul class="navbar-nav">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Course" title="Course">Mina Kurser</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-controller="Home" asp-action="Grades" title="Grades">Mina betyg</a>
+        </li>
+        @if (User.IsInRole("Student"))
+        {
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-controller="Home" asp-action="Schedule" title="Schedule">Mitt schema</a>
+            </li>
+        }
+
+
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-controller="Home" asp-action="Search" title="Search">Sök litteratur</a>
+        </li>
+        @if (User.IsInRole("Student"))
+             {
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-controller="Home" asp-action="Lia" title="LIA">Min LIA</a>
+            </li>
+            }
+      }
+</ul>

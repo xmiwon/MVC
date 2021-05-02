@@ -1,0 +1,23 @@
+﻿@if (SignInManager.IsSignedIn(User))
+{
+    @if (User.IsInRole("Admin"))
+    {
+        <div class="container">
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-controller="SchoolClassStudents" asp-action="Create" title="Add Students">Add Students</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-controller="SchoolClasses" asp-action="Index" title="Classes">Classes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-controller="Users" asp-action="Index" title="Users">Users</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Settings</a>
+                </li>
+
+            </ul>
+        </div>
+    }
+}

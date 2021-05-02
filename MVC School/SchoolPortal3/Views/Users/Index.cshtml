@@ -1,0 +1,28 @@
+﻿@*Lista av användare*@
+@model IEnumerable<ApplicationUser>
+
+<a asp-action="Create">Add New User</a>
+
+<h4 class="mt-4">Administrators</h4>
+@foreach (var user in ViewBag.Admins)
+{
+    <div>@user.DisplayName</div>
+}
+
+<h4 class="mt-4">Program Managers</h4>
+@foreach (var user in ViewBag.ProgramManagers)
+{
+    <div>@user.DisplayName</div>
+}
+
+@*<h4 class="mt-4">Teachers</h4>
+@foreach (var user in ViewBag.Teachers)
+{
+    <div>@user.DisplayName</div>
+}*@
+
+<h4 class="mt-4">Students</h4>
+@foreach (var user in ViewBag.Students)
+{
+    <div>@user.DisplayName</div>
+}
